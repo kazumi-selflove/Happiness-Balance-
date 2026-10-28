@@ -152,9 +152,7 @@ def run_streamlit():
     st.markdown("<h1 class='main-header'>✨ 男性性と女性性の幸せバランス診断 ✨</h1>", unsafe_allow_html=True)
     st.markdown("<p class='sub-header'>〜 今日あった嬉しかったことから、あなたの「男性性」と「女性性」の循環を判定 〜</p>", unsafe_allow_html=True)
 
-    user_input = st.text_area("男性性は行動する力、挑戦する力、考える力、カタチにする力。
-    女性性は感じる力、創造する力、共鳴する力、引き寄せる力。
-    今日あった「嬉しかったこと」「心が動いた出来事」を教えてください♡", placeholder="例：ランニングに行って朝日の写真を撮ったら、虹色のフレアが映り美しくて感動した！", height=100)
+    user_input = st.text_area("男性性は行動する力、挑戦する力、考える力、カタチにする力。女性性は感じる力、創造する力、共鳴する力、引き寄せる力。今日あった「嬉しかったこと」「心が動いた出来事」を教えてください♡", placeholder="例：ランニングに行って朝日の写真を撮ったら、虹色のフレアが映り美しくて感動した！", height=100)
 
     if st.button("🌸 幸せバランスを診断する", use_container_width=True):
         if not user_input.strip():
