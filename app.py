@@ -269,15 +269,7 @@ def main_streamlit():
 
     st.write("👨男性性は行動する力、挑戦する力、考える力、カタチにする力")
     st.write("👩女性性は感じる力、創造する力、共鳴する力、引き寄せる力")
-    # 入力例ボタン
-    col_ex1, col_ex2, col_ex3 = st.columns(3)
-    default_val = ""
-    if col_ex1.button("🍰 ケーキをもらった"):
-        default_val = "今日は同僚に仕事を手伝ってもらって、美味しいケーキをご馳走になった！"
-    if col_ex2.button("🌅 朝日に感動した"):
-        default_val = "今朝、ランニングに行って朝日の写真を撮ったら、虹色のフレアが映った超絶美しい写真が撮れて感動した"
-    if col_ex3.button("🎯 目標を達成した"):
-        default_val = "今月難しかったプロジェクトの目標数字を自力で達成して褒められた！"
+
 
     user_input = st.text_area("▼ 今日の出来事を入力", value=default_val, height=100, placeholder="例: 欲しかった服を試着したらサイズもピッタリでワクワクした！")
 
