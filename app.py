@@ -77,7 +77,7 @@ def analyze_joy(text: str) -> dict:
     if ratio_fem >= 65.0:
         category = "女性性の喜び（受容・五感・身体感覚の解放）"
         summary = (
-            "「受け取ること」「五感や身体感覚で味わうこと」「今この瞬間に没頭すること」によって心と身を満たした喜びです。\n"
+            "「受け取ること」「五感や身体感覚で味わうこと」「今この瞬間に没頭すること」によってココロとカラダを満たした喜びです。\n"
             "思考や成果にとらわれず、身体の感覚や感情を素直に開いて受け容れられている豊かな状態です。"
         )
         advice = (
@@ -149,10 +149,10 @@ def run_streamlit():
         </style>
     """, unsafe_allow_html=True)
 
-    st.markdown("<h1 class='main-header'>✨ 男性性女性性の幸せバランス診断 ✨</h1>", unsafe_allow_html=True)
-    st.markdown("<p class='sub-header'>〜 今日あった嬉しかったことから、あなたの「感性」と「行動力」の循環を判定 〜</p>", unsafe_allow_html=True)
+    st.markdown("<h1 class='main-header'>✨ 男性性と女性性の幸せバランス診断 ✨</h1>", unsafe_allow_html=True)
+    st.markdown("<p class='sub-header'>〜 今日あった嬉しかったことから、あなたの「男性性」と「女性性」の循環を判定 〜</p>", unsafe_allow_html=True)
 
-    user_input = st.text_area("今日あった「嬉しかったこと」「心が動いた出来事」を教えてください♡", placeholder="例：ランニングに行って朝日の写真を撮ったら、神様が降りてきたみたいに美しくて感動した！", height=100)
+    user_input = st.text_area("男性性は行動する力、挑戦する力、考える力、カタチにする力。女性性は感じる力、創造する力、共鳴する力、引き寄せる力。今日あった「嬉しかったこと」「心が動いた出来事」を教えてください♡", placeholder="例：ランニングに行って朝日の写真を撮ったら、虹色のフレアが映り美しくて感動した！", height=100)
 
     if st.button("🌸 幸せバランスを診断する", use_container_width=True):
         if not user_input.strip():
@@ -165,9 +165,9 @@ def run_streamlit():
 
             col1, col2 = st.columns(2)
             with col1:
-                st.metric("🌸 女性性の喜び", f"{res['ratio_fem']}%")
+                st.metric("👩 女性性の喜び", f"{res['ratio_fem']}%")
             with col2:
-                st.metric("⚡ 男性性の喜び", f"{res['ratio_masc']}%")
+                st.metric("👨 男性性の喜び", f"{res['ratio_masc']}%")
 
             st.progress(res['ratio_fem'] / 100.0)
 
@@ -177,7 +177,7 @@ def run_streamlit():
             st.markdown("### 💡 ワンポイントアドバイス")
             st.info(res['advice'])
 
-            st.markdown("### 📲 LINE・SNS共有用テキスト")
+            st.markdown("### 📓 まとめ")
             st.code(res['share_text'], language="text")
             st.markdown("</div>", unsafe_allow_html=True)
 
@@ -189,7 +189,7 @@ def cli_run():
     print("  〜 五感の受容力と行動の達成力から喜びの循環を判定 〜")
     print("=" * 60)
 
-    test_input = "今朝、ランニングに行って朝日の写真を撮ったら、神様が降りてきてるみたいな超絶美しい写真が撮れて感動した"
+    test_input = "今朝、ランニングに行って朝日の写真を撮ったら、虹色のフレアが映り美しくて感動した！"
     print(f"■ テスト実行例: 「{test_input}」\n")
     res = analyze_joy(test_input)
     print(f"★ 判定結果: 【{res['category']}】")
