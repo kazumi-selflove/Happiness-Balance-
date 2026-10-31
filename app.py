@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-『男性性女性性の幸せバランス診断』 (joy_checker_app-v6.py)
+『男性性と女性性の幸せバランス診断』 (joy_checker_app-v6.py)
 
 今日あった嬉しかった出来事から「男性性」と「女性性」のエネルギー、
 および内なる「セルフパートナーシップ（ワタシ彼氏×ワタシ彼女）」の状態を精密に診断するアプリ。
@@ -236,11 +236,11 @@ def analyze_joy(text: str) -> dict:
 
 def cli_run():
     print("=" * 60)
-    print("      ✨ 男性性女性性の幸せバランス診断 (v6) ✨")
+    print("      ✨ 男性性と女性性の幸せバランス診断 (v6) ✨")
     print("  〜 今日あった嬉しかったことから内なるエネルギーを判定 〜")
     print("=" * 60)
     
-    test_input = "今朝、ランニングに行って朝日の写真を撮ったら、神様が降りてきてるみたいな超絶美しい写真が撮れて感動した"
+    test_input = "今朝、ランニングに行って朝日の写真を撮ったら、虹色のフレアが映った超絶美しい写真が撮れて感動した"
     print(f"■ 入力例: {test_input}\n")
     res = analyze_joy(test_input)
     print(f"★ 判定結果: {res['category']}")
@@ -302,7 +302,7 @@ def main_streamlit():
         unsafe_allow_html=True
     )
 
-    st.markdown('<div class="main-title">✨ 男性性女性性の幸せバランス診断 ✨</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-title">✨ 男性性と女性性の幸せバランス診断 ✨</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-title">〜 今日あった嬉しかったことから、あなたの「男性性」と「女性性」を紐解く 〜</div>', unsafe_allow_html=True)
 
     st.write("今日あった「嬉しかったこと」「楽しかったこと」を自由に入力してください♡")
@@ -314,7 +314,7 @@ def main_streamlit():
     col_ex1, col_ex2, col_ex3 = st.columns(3)
     default_val = ""
    
-    user_input = st.text_area("▼ 今日の出来事を入力", value=default_val, height=100, placeholder="例: 欲しかった服を試着したらサイズもピッタリでワクワクした！")
+    user_input = st.text_area("▼ 今日の出来事を入力", value=default_val, height=100, placeholder="例: ランニングに行って朝日の写真を撮ったら、虹色のフレアが映った美しい写真が撮れて感動した！")
 
     if st.button("💖 喜びのバランスを診断する", use_container_width=True):
         if not user_input.strip():
