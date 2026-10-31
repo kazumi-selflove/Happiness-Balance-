@@ -303,7 +303,7 @@ def main_streamlit():
     )
 
     st.markdown('<div class="main-title">✨ 男性性女性性の幸せバランス診断 ✨</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-title">〜 今日あった嬉しかったことから、あなたの「愛され力」と「引き寄せ力」を紐解く 〜</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-title">〜 今日あった嬉しかったことから、あなたの「男性性」と「女性性」を紐解く 〜</div>', unsafe_allow_html=True)
 
     st.write("今日あった「嬉しかったこと」「楽しかったこと」を自由に入力してください♡")
     
